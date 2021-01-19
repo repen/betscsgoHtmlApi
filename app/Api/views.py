@@ -26,4 +26,4 @@ def page_result(number):
     _data = ResultPage.get_match_result( number )
     if _data:
         result = _data["data"].decode('unicode-escape')
-    return jsonify({"result":  result, "message":True, "m_id": number})
+    return jsonify({"result":  result, "message":True, "m_id": number, "length" : len(result)})

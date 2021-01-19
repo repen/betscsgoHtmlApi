@@ -3,7 +3,6 @@ from config import DATA_DIR
 import os
 
 db = SqliteDatabase( os.path.join( DATA_DIR, "datahtml.db" ) )
-print(os.path.join( DATA_DIR, "result_page.db" ))
 dbs = SqliteDatabase( os.path.join( DATA_DIR, "result_page.db" ) )
 
 
