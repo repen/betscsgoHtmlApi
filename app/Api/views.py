@@ -9,7 +9,10 @@ betcsgo = Blueprint('betcsgo', __name__, url_prefix="/betcsgo")
 def bet():
     _data = HtmlData.get_last_html()
     html = _data['html'].decode('unicode-escape')
-    return jsonify( {"data": html, "message" : True, "length":len(html)} )
+    return jsonify( {
+        "data": html, "message" : True, "length":len(html),
+        "snapshot_time" : _data["m_time"]
+    })
 
 
 @betcsgo.route("/task/<int:number>", methods=["GET"])
